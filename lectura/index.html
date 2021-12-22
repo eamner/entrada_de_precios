@@ -1,0 +1,106 @@
+<!-- EL CONTENIDO DE ESTA CARPETA ERA LA PRIMERA VERSION LA CUAL
+FUE CAMBIADA A SOLICITUD DEL CLIENTE.............
+ESTA CARPETA NO SE UTILIZA EN LA VERSION FINAL. SOLO FUE DEJADA AQUI PARA
+FINES INFORMATIVOS.........-->
+
+<!DOCTYPE html>
+<html lang="es">
+<div id='showData'></div>
+    <head>
+        <title>Test</title>
+        <!--<script src="https://rivas.associates/precios.js"></script>-->
+
+        <!--<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+        <script src="../../../jquery/jquery-3.5.1.min.js"></script>
+        <script src="./precios.js"></script>
+        <!--<script src="https://rivas.associates/script.js"></script>-->
+        <script src="./script.js"></script>
+
+    </head>
+    <body>
+       <div id="dropdown">
+           <select name="tipo_envio" id="tipo_envio" onchange="hideElement()" >
+               <option value="aereo">Aereo</option>
+               <option value="maritimo">Maritimo</option>
+               <option value="" disabled selected hidden>Seleccione Tipo de env�o</option>
+           </select>
+       </div>
+        <div id="calculo_aereo">
+            <h2>Calculo Aereo</h2>
+                <form id="calculo_aereo_form" title="calculo_aereo" name="Aereo">
+                    <div id="input_region_aereo">
+                        <p>Seleccione la regi�n del env�o.</p>
+                        <label for="nacional">
+                            <input required onchange="tipoEnvioAereo()" type="radio" id="nacional-aereo" name="nacional-caracas-aereo" value="nacional">Nacional
+                        </label>
+                        <label for="caracas">
+                            <input required onchange="tipoEnvioAereo()" type="radio" id="caracas-aereo" name="nacional-caracas-aereo" value="caracas">Caracas
+                        </label>
+                    </div>
+                    <div id="input_alto">
+                        <p id="alto_title">Alto</p>
+                        <input required type="number" id="alto" title="alto"  value=" ">
+                    </div> <br>
+                    <div id="input_largo">
+                        <p id="largo_title">Largo</p>
+                        <input required type="number" id="largo" title="largo" value=" ">
+                    </div> <br>
+                    <div id="input_ancho">
+                        <p id="ancho_title">Ancho</p>
+                        <input required type="number" id="ancho" title="ancho" value=" ">
+                    </div> <br>
+                    <div id="libras_estimadas">
+                        <p id="libras_calculadas">Libras estimadas: </p>
+                    </div>
+                    <div id="input_libras">
+                        <p id="libras_title">Peso</p>
+                        <input required type="number" id="libras" title="libras" value=" " >
+                    </div><br>
+                    <button type="button" onclick="calculatePrice()" id="boton_total">Total:</button> <h4 id="resultado_total">0</h4>
+                </form>
+            </div>
+
+        </div>
+        <div id="calculo_maritimo">
+            <h2>Calculo Maritimo</h2>
+                <form id="calculo_maritimo_form" title="calculo_maritimo" name="Maritimo">
+                    <div id="input_region_mar">
+                        <p>Seleccione la regi�n del env�o.</p>
+                        <label for="nacional_mar">
+                            <input required onchange="tipoEnvioMar()" type="radio" id="nacional-mar" name="nacional-caracas-mar" value="nacional">Nacional
+                        </label>
+                        <label for="caracas">
+                            <input required onchange="tipoEnvioMar()" type="radio" id="caracas-mar" name="nacional-caracas-mar" value="caracas">Caracas
+                        </label>
+                    </div>
+                    <div id="input_alto">
+                        <h4 id="alto_title">Alto</h4>
+                        <input required type="number" id="alto_maritimo" title="alto"  value=" ">
+                    </div> <br>
+                    <div id="input_largo">
+                        <p id="largo_title">Largo</p>
+                        <input required type="number" id="largo_maritimo" title="largo" value=" ">
+                    </div> <br>
+                    <div id="input_ancho">
+                        <p id="ancho_title">Ancho</p>
+                        <input required type="number" id="ancho_maritimo" title="ancho" value=" ">
+                    </div> <br>
+                    <div id="input_ft3">
+                        <p id="ft3_title">Pies Cubicos</p> <p id="ft3" title="Pie Cubico"></p>
+                    </div>
+                    <button type="button" onclick="calculatePriceMar()" id="boton_total_mar">Total:</button> <h4 id="resultado_total_mar">0</h4>
+                </form>
+            </div>
+
+
+     </body>
+<style type="text/css">
+    #calculo_aereo {
+        display: none;
+    }
+
+    #calculo_maritimo {
+        display: none;
+    }
+</style>
+</html>
